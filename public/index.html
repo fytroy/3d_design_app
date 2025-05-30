@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Brand 3D - Custom & Pre-designed 3D Prints</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">SHOP YETU3D</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products.html">Shop 3D Prints</a></li>
+                    <li><a href="#custom-order">Custom Order</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="/checkout.html">🛒 <span id="cart-count">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Bring Your Ideas to Life with Custom 3D Designs</h1>
+                <p>From concept to creation, we craft bespoke 3D models and offer unique pre-designed prints.</p>
+                <div class="hero-buttons">
+                    <a href="#custom-order" class="btn primary-btn">Start Your Custom Design</a>
+                    <a href="/products.html" class="btn secondary-btn">Shop Pre-designed Prints</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section">
+            <div class="container">
+                <h2>How Our Custom Design Process Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-num">1</span>
+                        <h3>Submit Your Idea</h3>
+                        <p>Fill out our simple form with your concept, sketches, or reference images.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">2</span>
+                        <h3>Get a Personalized Quote</h3>
+                        <p>We'll review your request and provide a detailed quote and timeline.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">3</span>
+                        <h3>Design & Approval</h3>
+                        <p>Our experts will design your model. You'll get to review and approve the design.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">4</span>
+                        <h3>Fulfill Your Order</h3>
+                        <p>Choose between digital file delivery or a physical 3D print with Cash on Delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section bg-light">
+            <div class="container">
+                <h2>Our Portfolio: Crafted with Precision</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="/images/portfolio-1.jpg" alt="Custom Figurine">
+                        <p>Personalized Action Figure</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/images/portfolio-2.jpg" alt="Architectural Model">
+                        <p>Detailed Architectural Prototype</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/images/portfolio-3.jpg" alt="Functional Part">
+                        <p>Custom Functional Component</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/images/portfolio-4.jpg" alt="Jewelry Design">
+                        <p>Bespoke Jewelry Piece</p>
+                    </div>
+                </div>
+                <button class="btn primary-btn" onclick="alert('In a real app, this would show more projects or link to a portfolio page!');">View More Projects</button>
+            </div>
+        </section>
+
+        <section id="custom-order" class="section">
+            <div class="container">
+                <h2>Request Your Custom 3D Design</h2>
+                <p class="form-intro">Tell us about your project. The more details, the better!</p>
+                <form id="customDesignForm" action="/submit-custom-request" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional):</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="project-description">Project Description: <small>(e.g., purpose, desired look, specific features)</small></label>
+                        <textarea id="project-description" name="project_description" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="dimensions">Approx. Dimensions / Scale (Optional):</label>
+                        <input type="text" id="dimensions" name="dimensions" placeholder="e.g., 10cm tall, 1:24 scale">
+                    </div>
+                    <div class="form-group">
+                        <label for="reference-images">Upload Reference Images/Sketches (Max 3 files):</label>
+                        <input type="file" id="reference-images" name="reference_images" multiple accept="image/*,.pdf">
+                        <small>Max file size 5MB per file. Supported: JPG, PNG, PDF.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="file-upload">Upload Existing 3D File (Optional - STL, OBJ, etc.):</label>
+                        <input type="file" id="file-upload" name="existing_3d_file" accept=".stl,.obj,.3mf">
+                        <small>If you have a rough 3D model. Max file size 20MB.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="fulfillment-type">Fulfillment:</label>
+                        <select id="fulfillment-type" name="fulfillment_type" required>
+                            <option value="">Please Select</option>
+                            <option value="digital-file">Digital 3D File Only</option>
+                            <option value="design-and-print">Design & 3D Print (Physical Item)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Desired Deadline (Optional):</label>
+                        <input type="date" id="deadline" name="deadline">
+                    </div>
+
+                    <button type="submit" class="btn primary-btn">Submit Your Request</button>
+                    <p class="form-note">Please note: This is a request form, not a final order. We will contact you with a personalized quote and discuss details.</p>
+                </form>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p>Have questions? We're here to help!</p>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:fytpng@gmail.com">fytpng@gmail.com</a></p>
+                    <p>Phone: +254 705 762 775 (Kenya)</p>
+                    <p>Address: [Your Business Address, Nairobi, Kenya]</p>
+                </div>
+                <div class="social-media">
+                    <a href="#" target="_blank">Facebook</a> |
+                    <a href="#" target="_blank">Instagram</a> |
+                    <a href="#" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Brand 3D. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Your Brand 3D</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">YourBrand3D</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products.html">Shop 3D Prints</a></li>
+                    <li><a href="/#custom-order">Custom Order</a></li>
+                    <li><a href="/#how-it-works">How It Works</a></li>
+                    <li><a href="/#portfolio">Portfolio</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="/checkout.html">🛒 <span id="cart-count">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout-page-main">
+        <section class="section">
+            <div class="container">
+                <h2>Your Order Checkout</h2>
+                <div id="checkout-content">
+                    <div class="checkout-cart-summary">
+                        <h3>Your Cart</h3>
+                        <div id="cart-items-display">
+                            <p>Your cart is empty.</p>
+                        </div>
+                        <div class="cart-total">
+                            <strong>Total: <span id="cart-total-display">KES 0</span></strong>
+                        </div>
+                        <a href="/products.html" class="btn secondary-btn" style="margin-top: 20px;">Continue Shopping</a>
+                    </div>
+
+                    <form id="checkout-form" action="/place-order" method="POST">
+                        <h3>Shipping Information</h3>
+                        <div class="form-group">
+                            <label for="fullName">Full Name:</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Delivery Address:</label>
+                            <input type="text" id="address" name="address" placeholder="Street Address, Apt, etc." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City:</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="county">County (Kenya):</label>
+                            <input type="text" id="county" name="county" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number (for delivery):</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+254 7XX XXX XXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <h3>Payment Method</h3>
+                        <div class="payment-method">
+                            <input type="radio" id="payOnDelivery" name="paymentMethod" value="pay-on-delivery" checked>
+                            <label for="payOnDelivery">Cash on Delivery (Pay upon receiving your physical print)</label>
+                            <p class="payment-note">For physical prints, payment will be collected when your order is delivered.</p>
+                        </div>
+                        <button type="submit" class="btn primary-btn place-order-btn">Place Order</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Brand 3D. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

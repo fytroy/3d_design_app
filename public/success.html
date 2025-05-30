@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed! - Your Brand 3D</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        .success-message {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 60px auto;
+        }
+        .success-message h1 {
+            color: #28aa46; /* Green for success */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .success-message p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .success-message .order-id {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .success-message .btn {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">YourBrand3D</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products.html">Shop 3D Prints</a></li>
+                    <li><a href="/#custom-order">Custom Order</a></li>
+                    <li><a href="/#how-it-works">How It Works</a></li>
+                    <li><a href="/#portfolio">Portfolio</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="/checkout.html">🛒 <span id="cart-count">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="success-message">
+                    <h1>Order Placed Successfully! 🎉</h1>
+                    <p>Thank you for your order with Your Brand 3D!</p>
+                    <p>Your order ID is: <span class="order-id" id="order-id-display"></span></p>
+                    <p>You have chosen "Cash on Delivery." We will contact you shortly to confirm your order and delivery details.</p>
+                    <a href="/" class="btn primary-btn">Continue Shopping</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Brand 3D. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script>
+        // Display order ID from URL parameter (if present)
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const orderId = params.get('orderId');
+            if (orderId) {
+                document.getElementById('order-id-display').textContent = orderId;
+            } else {
+                document.getElementById('order-id-display').textContent = 'N/A';
+            }
+            // Clear cart after successful order
+            localStorage.removeItem('cart');
+            updateCartCount(); // Update the cart count in the header
+        });
+    </script>
+</body>
+</html>
