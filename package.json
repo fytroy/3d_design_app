@@ -8,7 +8,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "A web application for a 3D design and printing service, allowing users to order pre-designed items or submit custom design requests.",
   "dependencies": {
     "body-parser": "^2.2.0",
     "express": "^5.1.0",
